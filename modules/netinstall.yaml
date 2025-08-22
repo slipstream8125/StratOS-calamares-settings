@@ -1,0 +1,172 @@
+# Example configuration with groups and packages, taken from Chakra Linux.
+#
+# SPDX-FileCopyrightText: no
+# SPDX-License-Identifier: CC0-1.0
+#
+# This example is rather limited. See `netinstall.conf` for full documentation
+# on the configuration format. The module configuration file `netinstall.conf`
+# **may** contain the package-list, but that is only useful for static
+# package-lists. If you are updating the package lists or changing the package
+# offerings, an online `netinstall.yaml` is the way to go; or you can put the
+# `netinstall.yaml` on the installation media and modify that, while keeping
+# your Calamares configuration constant.
+#
+# Which approach works depends on what you want to offer and how your
+# ISO-image toolchain works.
+#
+
+
+
+- name: "Base Packages"
+  description: "Base Packages required for ISO installation"
+  hidden: true
+  selected: true
+  critical: true
+  packages:
+    - base
+    - lsb-release
+    - avahi
+    - grub
+    # disk utils
+    - dosfstools
+    - e2fsprogs
+    - fuse
+    - gptfdisk
+    - jfsutils
+    - ntfs-3g
+    - reiserfsprogs
+    - xfsprogs
+    # power
+    - acpi_call
+    - pmtools
+    # network
+    - dnsutils
+    - iputils
+    - netcfg
+    - xinetd
+    # firmwares
+    - alsa-firmware
+    - linux-firmware
+    # sound
+    - alsa-lib
+    - alsa-utils
+    - gstreamer
+    - gst-plugins-good
+    - gst-plugins-bad
+    - libao
+    - libcanberra-gstreamer
+    - libcanberra-pulse
+    - pulseaudio
+    - pulseaudio-alsa
+    # tools
+    - bash-completion
+    - hwinfo
+    - lsof
+    - man-db
+    - mlocate
+    - nano
+    - openssh
+    - sudo
+    - vim
+    - zsh # :D
+    # archivers
+    - p7zip
+    - unarj
+    - unrar
+    - unzip
+    - zip
+    # xorg base
+    - xorg
+    - xorg-apps
+    - xorg-fonts-alias
+    - xorg-fonts-encodings
+    - xorg-fonts-misc
+    - xorg-res-utils
+    - xorg-server
+    - xorg-server-utils
+    - xorg-xauth
+    - xorg-xinit
+    - xorg-xkb-utils
+    # xorg video drivers
+    - xf86-video-apm
+    - xf86-video-ark
+    - xf86-video-ati
+    - xf86-video-chips
+    - xf86-video-cirrus
+    - xf86-video-glint
+    - xf86-video-i128
+    - xf86-video-i740
+    - xf86-video-intel
+    - xf86-video-mach64
+    - xf86-video-mga
+    - xf86-video-neomagic
+    - xf86-video-nouveau
+    - xf86-video-nv
+    - xf86-video-openchrome
+    - xf86-video-r128
+    - xf86-video-rendition
+    - xf86-video-s3
+    - xf86-video-s3virge
+    - xf86-video-savage
+    - xf86-video-siliconmotion
+    - xf86-video-sisusb
+    - xf86-video-tdfx
+    - xf86-video-trident
+    - xf86-video-tseng
+    - xf86-video-v4l
+    - xf86-video-vesa
+    - xf86-video-voodoo
+    - mesa-libgl
+    # xorg input drivers
+    - xf86-input-synaptics
+    - xf86-input-wacom
+    - xf86-input-evdev
+    - xf86-input-keyboard
+    - xf86-input-mouse
+    # fonts
+    - terminus-font
+    - ttf-dejavu
+    - ttf-liberation
+    - wqy-microhei
+    - xorg-fonts-100dpi
+    - xorg-fonts-75dpi
+    - xorg-fonts-cyrillic
+
+
+- name: "StratOS required packages"
+  description: "Core Packages"
+  critical: true
+  hidden: true
+  selected: true
+  packages:
+    - stratos-kitty-config
+    - stratos-mako-config
+    - stratos-starship-config
+    - stratos-wallpapers
+- name: "Gnome Desktop Spin"
+  description: "GNOME"
+  critical: false
+  hidden: false
+  selected: false
+  packages: 
+    - gdm
+    - gnome-backgrounds
+    - gnome-characters
+    - gnome-control-center
+    - gnome-font-viewer
+    - gnome-keyring
+    - gnome-screenshot
+    - gnome-session
+    - gnome-settings-daemon
+    - gnome-shell
+    - gnome-shell-extensions
+    - gnome-system-monitor
+    - gedit
+    - gnome-terminal
+    - gnome-user-share
+    - nautilus
+    - loupe
+    - xdg-desktop-portal-gnome
+    - xdg-user-dirs-gtk
+
+
